@@ -4,16 +4,21 @@ export const config = {
 };
 
 export default function middleware(request) {
+  const expectedUser =
+    process.env.SITE_USER ?? process.env.WEDDING_USERNAME;
+  const expectedPassword =
+    process.env.SITE_PASSWORD ?? process.env.WEDDING_PASSWORD;
+
   const authorizationHeader = request.headers.get('authorization');
 
   if (authorizationHeader) {
     const basicAuth = authorizationHeader.split(' ')[1];
     const [user, password] = atob(basicAuth).split(':');
 
-    // Checks against the secure environment variables in Vercel
+    // Vercel: SITE_USER / SITE_PASSWORD. Local .env can use WEDDING_* instead.
     if (
-      user === process.env.SITE_USER &&
-      password === process.env.SITE_PASSWORD
+      user === expectedUser &&
+      password === expectedPassword
     ) {
       // Password is correct, load the site
       return new Response(null, {
