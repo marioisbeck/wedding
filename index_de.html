@@ -76,126 +76,126 @@
 		
 			setInterval(() => {
 				currentImageIndex = (currentImageIndex % totalImages) + 1;
-				headerElement.style.backgroundImage = `url(images/wedding_pics/${currentImageIndex}.jpg)`;
+				headerElement.style.backgroundImage = `url(https://assets.miekeandmario.com/images/wedding_pics/${currentImageIndex}.jpg)`;
 			}, intervalTime);
 		});
 		
 		document.addEventListener("DOMContentLoaded", function() {
 			const mediaFiles = [
 				// START RENUMBERING IMAGES - DO NOT REMOVE THIS COMMENT
-				{ type: 'image', src: 'images/wedding_pics/1.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/2.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/3.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/4.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/5.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/6.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/7.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/8.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/9.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/10.jpg' },
-				{ type: 'video', src: 'images/videos/10.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/11.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/12.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/13.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/14.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/15.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/16.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/17.jpg' },
-				{ type: 'video', src: 'images/videos/17.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/18.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/19.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/20.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/21.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/22.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/23.jpg' },
-				{ type: 'video', src: 'images/videos/23.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/24.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/25.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/26.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/27.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/28.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/29.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/30.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/31.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/32.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/33.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/34.jpg' },
-				{ type: 'video', src: 'images/videos/34.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/35.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/36.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/37.jpg' },
-				{ type: 'video', src: 'images/videos/37.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/38.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/39.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/40.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/41.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/42.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/43.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/44.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/45.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/46.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/47.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/48.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/49.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/50.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/51.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/52.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/53.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/54.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/55.jpg' },
-				{ type: 'video', src: 'images/videos/55.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/56.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/57.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/58.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/59.jpg' },
-				{ type: 'video', src: 'images/videos/59.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/60.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/61.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/62.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/63.jpg' },
-				{ type: 'video', src: 'images/videos/63.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/64.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/65.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/66.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/67.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/68.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/69.jpg' },
-				{ type: 'video', src: 'images/videos/69.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/70.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/71.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/72.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/73.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/74.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/75.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/76.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/77.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/78.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/79.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/80.jpg' },
-				{ type: 'video', src: 'images/videos/80.5.mp4' },
-				{ type: 'image', src: 'images/wedding_pics/81.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/82.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/83.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/84.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/85.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/86.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/87.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/88.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/89.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/90.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/91.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/92.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/93.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/94.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/95.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/96.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/97.jpg' },
-				{ type: 'image', src: 'images/wedding_pics/98.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/1.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/2.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/3.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/4.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/5.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/6.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/7.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/8.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/9.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/10.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/10.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/11.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/12.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/13.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/14.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/15.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/16.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/17.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/17.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/18.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/19.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/20.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/21.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/22.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/23.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/23.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/24.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/25.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/26.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/27.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/28.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/29.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/30.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/31.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/32.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/33.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/34.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/34.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/35.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/36.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/37.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/37.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/38.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/39.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/40.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/41.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/42.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/43.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/44.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/45.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/46.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/47.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/48.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/49.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/50.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/51.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/52.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/53.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/54.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/55.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/55.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/56.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/57.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/58.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/59.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/59.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/60.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/61.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/62.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/63.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/63.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/64.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/65.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/66.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/67.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/68.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/69.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/69.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/70.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/71.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/72.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/73.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/74.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/75.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/76.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/77.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/78.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/79.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/80.jpg' },
+				{ type: 'video', src: 'https://assets.miekeandmario.com/images/videos/80.5.mp4' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/81.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/82.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/83.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/84.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/85.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/86.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/87.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/88.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/89.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/90.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/91.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/92.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/93.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/94.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/95.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/96.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/97.jpg' },
+				{ type: 'image', src: 'https://assets.miekeandmario.com/images/wedding_pics/98.jpg' },
 				// END RENUMBERING IMAGES - DO NOT REMOVE THIS COMMENT
 			];
 		
 			const galleryDiv = document.querySelector('.gallery');
-			const specialVideo = { type: 'video', src: 'images/videos/haag.mp4' };
+			const specialVideo = { type: 'video', src: 'https://assets.miekeandmario.com/images/videos/haag.mp4' };
 		
 			const specialContainer = document.createElement('div');
 			specialContainer.style.position = 'relative';
@@ -238,7 +238,7 @@
 			galleryDiv.parentNode.insertBefore(specialContainer, galleryDiv);
 		
 			mediaFiles.forEach(file => {
-				if (file.src === 'images/videos/haag.mp4') return; // Skip the special video as it's already added
+				if (file.src === 'https://assets.miekeandmario.com/images/videos/haag.mp4') return; // Skip the special video as it's already added
 		
 				const container = document.createElement('div');
 				container.style.position = 'relative';
@@ -474,18 +474,18 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/wedding_pics/101.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(https://assets.miekeandmario.com/images/wedding_pics/101.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Mieke &amp; Mario's<br>Bruiloft</h1>
-							<h2>19 August 2023</h2>
+							<h1>Mieke &amp; Mario's<br>Hochzeit</h1>
+							<h2>19<sup>ter</sup> August 2023</h2>
 							<!-- <div class="simply-countdown simply-countdown-one"></div>
 							<p><a href="LoveDay Mieke & Mario.ics" class="btn btn-default btn-sm">Save the date</a></p> -->
-							<p><a href="https://drive.google.com/drive/folders/16yeiqWiNmhgIT6XgpAmVHq78rt3nE9BM?usp=sharing" target="_blank" class="btn btn-default btn-sm">Fotos en Videos</a></p>
+							<p><a href="https://drive.google.com/drive/folders/16yeiqWiNmhgIT6XgpAmVHq78rt3nE9BM?usp=sharing" target="_blank" class="btn btn-default btn-sm">Fotos und Videos</a></p>
 						</div>
 					</div>
 				</div>
@@ -493,35 +493,34 @@
 		</div>
 	</header>
 
-
 	<div id="fh5co-couple">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2><a id = "love_day">Dank Jullie Wel</a></h2>
+					<h2><a id = "love_day">Danke</a></h2>
 					<!-- <h3>19<sup>th</sup> August 2023</h3> -->
           <!-- <h3>Between Tiny Houses in Den Hoorn ZH, Netherlands</h3> -->
-					<p>... voor het maken van herinneringen met ons die voor ons voelen alsof het gisteren was!</p>
+					<p>... dass ihr mit uns Erinnerungen geschaffen habt, die so frisch bleiben wie am ersten Tag!</p>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
 				<div class="couple-half">
 					<div class="bride">
-						<img src="images/bride.jpg" alt="bride" class="img-responsive">
+						<img src="https://assets.miekeandmario.com/images/bride.jpg" alt="bride" class="img-responsive">
 					</div>
 					<div class="desc-bride">
 						<!-- <h3>Mieke van der Laan</h3> -->
-						<p>We hebben een geweldige tijd gehad om onze trouwdag met iedereen te vieren. Het was een dag vol liefde, lachen en onvergetelijke herinneringen. Het heeft misschien even geduurd voordat we de foto's met iedereen deelden (~ een jaar), maar hé, goede dingen komen naar degenen die geduldig zijn!</p>
+						<p>Wir hatten eine wunderbare Zeit, unseren Hochzeitstag mit euch allen zu feiern. Es war ein Tag voller Liebe, Lachen und unvergesslichen Erinnerungen. Es hat eine Weile gedauert, bis wir die Fotos mit euch geteilt haben (~ ein Jahr), aber hey, gute Dinge kommen zu denen, die geduldig sind!</p>
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
 				<div class="couple-half">
 					<div class="groom">
-						<img src="images/groom.png" alt="groom" class="img-responsive">
+						<img src="https://assets.miekeandmario.com/images/groom.png" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
 						<!-- <h3>Mario Beck</h3> -->
-						<p>Afgelopen jaar is echter een achtbaan voor ons geweest. De geboorte van onze dochter Felien, het overlijden van Mieke's vader... De extremen van het leven in te nauwe nabijheid. We zijn dankbaar voor ons vrienden en familie die onze gelukkige momenten vieren en ons steunen in moeilijke tijden.</p>.
+						<p>Das letzte Jahr war eine Achterbahnfahrt für uns. Die Geburt unserer Tochter Felien, der Tod von Mieke's Vater... Die Extreme des Lebens in allzu großer Nähe. Wir haben das Glück, Freunde und Familie zu haben, die unsere glücklichen Momente mit uns feiern und in schwierigen Zeiten für uns da sind. Danke!</p>.
 					</div>
 				</div>
 			</div>
