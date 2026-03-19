@@ -196,110 +196,129 @@
 		
 			const galleryDiv = document.querySelector('.gallery');
 			const specialVideo = { type: 'video', src: 'https://assets.miekeandmario.com/images/videos/haag.mp4' };
-		
+
+			function ensurePreviewSource(video) {
+				const url = video.dataset.videoSrc;
+				if (url && !video.getAttribute('src')) {
+					video.src = url;
+				}
+			}
+
+			function unloadPreviewVideo(video) {
+				video.pause();
+				if (video.getAttribute('src')) {
+					video.removeAttribute('src');
+					video.load();
+				}
+			}
+
+			const previewObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					const v = entry.target;
+					if (entry.isIntersecting) {
+						ensurePreviewSource(v);
+						v.play().catch(() => {});
+					} else {
+						unloadPreviewVideo(v);
+					}
+				});
+			}, { rootMargin: '120px 0px', threshold: 0.25 });
+
 			const specialContainer = document.createElement('div');
 			specialContainer.style.position = 'relative';
 			specialContainer.style.textAlign = 'center';
 			specialContainer.style.marginBottom = '20px';
-		
+
 			const specialVideoElement = document.createElement('video');
-			specialVideoElement.src = specialVideo.src;
+			specialVideoElement.classList.add('wedding-gallery-preview');
+			specialVideoElement.dataset.videoSrc = specialVideo.src;
+			specialVideoElement.preload = 'none';
 			specialVideoElement.controls = false;
-			specialVideoElement.muted = true; // Mute the video to allow autoplay in Chrome
-			specialVideoElement.autoplay = true; // Autoplay the video
-			specialVideoElement.playsinline = true; // for mobile devices
-			specialVideoElement.style.width = '60%'; // Make the video slightly larger
-			specialVideoElement.style.maxWidth = '800px'; // Limit the maximum width
-			specialVideoElement.style.borderRadius = '15px'; // Add rounded edges
-		
-			// Ensure autoplay on mobile devices
-			specialVideoElement.addEventListener('canplay', () => {
-				specialVideoElement.play();
-			});
-		
-			specialVideoElement.onclick = function() {
-				openModal('video', specialVideoElement.src);
+			specialVideoElement.muted = true;
+			specialVideoElement.loop = true;
+			specialVideoElement.playsInline = true;
+			specialVideoElement.setAttribute('playsinline', '');
+			specialVideoElement.style.width = '60%';
+			specialVideoElement.style.maxWidth = '800px';
+			specialVideoElement.style.borderRadius = '15px';
+
+			specialVideoElement.onclick = function () {
+				openModal('video', specialVideo.src);
 			};
-			specialVideoElement.onmouseover = function() {
+			specialVideoElement.onmouseover = function () {
 				specialVideoElement.controls = true;
-				specialVideoElement.muted = true; // if false -> Unmute the video when interacted with
-				specialVideoElement.playsinline = true;
 			};
-			specialVideoElement.onmouseout = function() {
+			specialVideoElement.onmouseout = function () {
 				specialVideoElement.controls = false;
-				specialVideoElement.muted = true;
-				specialVideoElement.playsinline = true;
 			};
-			specialVideoElement.onended = function() {
-				specialVideoElement.play(); // Restart the video when it ends
-			};
-		
+
 			specialContainer.appendChild(specialVideoElement);
 			galleryDiv.parentNode.insertBefore(specialContainer, galleryDiv);
-		
-			mediaFiles.forEach(file => {
-				if (file.src === 'https://assets.miekeandmario.com/images/videos/haag.mp4') return; // Skip the special video as it's already added
-		
+			previewObserver.observe(specialVideoElement);
+
+			mediaFiles.forEach((file) => {
+				if (file.src === 'https://assets.miekeandmario.com/images/videos/haag.mp4') return;
+
 				const container = document.createElement('div');
 				container.style.position = 'relative';
-		
+
 				if (file.type === 'image') {
 					const img = document.createElement('img');
 					img.src = file.src;
 					img.alt = `Photo`;
-					img.onclick = function() {
+					img.onclick = function () {
 						openModal(file.type, img.src);
 					};
 					container.appendChild(img);
 				} else if (file.type === 'video') {
 					const video = document.createElement('video');
-					video.src = file.src;
+					video.classList.add('wedding-gallery-preview');
+					video.dataset.videoSrc = file.src;
+					video.preload = 'none';
 					video.controls = false;
-					video.muted = true; // Mute the video to allow autoplay in Chrome
-					video.alt = `Video`;
-					video.autoplay = true; // Autoplay the video
-					video.playsinline = true; // for mobile devices
-		
-					video.onclick = function() {
-						openModal(file.type, video.src);
+					video.muted = true;
+					video.loop = true;
+					video.playsInline = true;
+					video.setAttribute('playsinline', '');
+
+					video.onclick = function () {
+						openModal(file.type, file.src);
 					};
-					video.onmouseover = function() {
+					video.onmouseover = function () {
 						video.controls = true;
-						video.muted = true; // if false -> Unmute the video when interacted with
-						video.playsinline = true; // for mobile devices
 					};
-					video.onmouseout = function() {
+					video.onmouseout = function () {
 						video.controls = false;
-						video.muted = true;
-						video.playsinline = true; // for mobile devices
-					};
-					video.onended = function() {
-						video.play(); // Restart the video when it ends
 					};
 					container.appendChild(video);
+					previewObserver.observe(video);
 				}
-		
+
 				galleryDiv.appendChild(container);
 			});
-		
+
 			function openModal(type, src) {
+				document.querySelectorAll('.wedding-gallery-preview').forEach((v) => v.pause());
 				const modal = document.getElementById('myModal');
 				const modalContent = document.querySelector('.modal-content');
-				modal.style.display = "block";
-				modalContent.innerHTML = type === 'image' ? `<img src="${src}" alt="Enlarged Photo">` : `<video src="${src}" controls playsinline muted autoplay></video>`;
+				modal.style.display = 'block';
+				modalContent.innerHTML =
+					type === 'image'
+						? `<img src="${src}" alt="Enlarged Photo">`
+						: `<video src="${src}" controls playsinline autoplay></video>`;
 			}
-		
+
 			function closeModal() {
 				const modal = document.getElementById('myModal');
-				modal.style.display = "none";
-				const video = modal.querySelector('video');
-				if (video) {
-					video.controls = false;
-					video.muted = true; // Mute the video to allow autoplay in Chrome
-					video.alt = `Video`;
-					video.autoplay = true; // Autoplay the video
-					video.playsinline = true; // for mobile devices
+				const modalContent = document.querySelector('.modal-content');
+				const mv = modal.querySelector('video');
+				if (mv) {
+					mv.pause();
+					mv.removeAttribute('src');
+					mv.load();
 				}
+				modalContent.innerHTML = '';
+				modal.style.display = 'none';
 			}
 		
 			// Close the modal when clicking outside the image
@@ -317,55 +336,6 @@
 				}
 			});
 		
-			// IntersectionObserver to play videos when they come into view
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.play();
-					} else {
-						entry.target.pause();
-					}
-				});
-			}, { threshold: 0.5 });
-
-
-			// added
-			// IntersectionObserver for special video
-			const specialObserver = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.play();
-					} else {
-						entry.target.pause();
-					}
-				});
-			}, { threshold: 0.5 });
-
-			specialObserver.observe(specialVideoElement);
-			specialVideoElement.addEventListener('canplay', () => {
-				specialVideoElement.play();
-			});
-			specialVideoElement.setAttribute('playsinline', 'true');
-			// added end
-
-			document.querySelectorAll('.gallery video').forEach(video => {
-				observer.observe(video);
-				video.addEventListener('canplay', () => {
-					video.play(); // Start playing the video as soon as it can play
-				});
-				video.setAttribute('playsinline', 'true'); // Ensure videos play inline on mobile devices
-			});
-		
-			// Trigger play on user interaction
-			document.addEventListener('scroll', () => {
-				document.querySelectorAll('.gallery video').forEach(video => {
-					if (video.paused && video.muted) {
-						video.play();
-					}
-				});
-				video.setAttribute('playsinline', 'true'); // Ensure videos play inline on mobile devices
-			});
-			
 		});
 		</script>
 
@@ -398,6 +368,13 @@
         .gallery video {
             display: block;
             position: relative;
+        }
+        .gallery video.wedding-gallery-preview {
+            min-height: 140px;
+            background: #1a1a1a;
+        }
+        video.wedding-gallery-preview {
+            background: #1a1a1a;
         }
         .gallery video::-webkit-media-controls {
             display: none !important;
